@@ -28,8 +28,40 @@ function generatePassword() {
   var uppercaseRequired = window.confirm("If upper case required, click Ok. If no click Cancel")
   //create an alert if none are selected that one must be selected
   if (!specialCharacterRequired && !numberRequired && !lowercaseRequired && !uppercaseRequired) {
-    alert("Need to select at least one option.")
+    alert("Need to select at least one option. Please try again?")
   }
+
+  //gathers the password options to be chosen from
+  var passwordOptions = {
+    passwordLength: passwordLength,
+    specialCharacterRequired: specialCharacterRequired,
+    numberRequired: numberRequired,
+    lowercaseRequired: lowercaseRequired,
+    uppercaseRequired: uppercaseRequired,
+  }
+
+  //creates an object from the required character sets
+  var chosenOptions = [
+    {
+      required: passwordOptions.specialCharacterRequired,
+      characters: specialCharacter
+    },
+    {
+      required: passwordOptions.numberRequired,
+      characters: number
+    },
+    {
+      required: passwordOptions.lowercaseRequired,
+      characters: lowercase
+    },
+    {
+      required: passwordOptions.uppercaseRequired,
+      characters: uppercase
+    },
+  ]
+
+  //
+
 }
 function writePassword() {
   var password = generatePassword();
