@@ -115,6 +115,7 @@ if (uppercaseRequired === true) {
 return password.join("")
 }
 
+//actually creating the password
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
