@@ -8,7 +8,9 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 
 var generateBtn = document.querySelector("#generate");
 
-
+  // Write password to the #password input
+  function generatePassword() {
+    
   //start by defining password length
   var passwordLength = window.prompt("Enter desired password length, between 8 and 128 characters.")
   if ((passwordLength < 7) || (passwordLength > 129)) {
@@ -35,8 +37,6 @@ var generateBtn = document.querySelector("#generate");
     alert("Need to select at least one option. Please try again?")
   }
 
-  // Write password to the #password input
-function generatePassword() {
 
   //gathers the password options to be chosen from
   var passwordOptions = {
