@@ -8,8 +8,6 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function generatePassword() {
 
   //start by defining password length
   var passwordLength = window.prompt("Enter desired password length, between 8 and 128 characters.")
@@ -18,18 +16,27 @@ function generatePassword() {
     return
   }
 
+
+
   //promt user if a special character is required
   var specialCharacterRequired = window.confirm("If special character is required, click Ok. If no click Cancel.")
+
   //prompt if number required
   var numberRequired = window.confirm("If number is required, click Ok. If no click Cancel")
+
   //promt if lower case required
   var lowercaseRequired = window.confirm("If lower case required, click Ok. If no click Cancel")
+
   //promt if upper case required
   var uppercaseRequired = window.confirm("If upper case required, click Ok. If no click Cancel")
+
   //create an alert if none are selected that one must be selected
   if (!specialCharacterRequired && !numberRequired && !lowercaseRequired && !uppercaseRequired) {
     alert("Need to select at least one option. Please try again?")
   }
+
+  // Write password to the #password input
+function generatePassword() {
 
   //gathers the password options to be chosen from
   var passwordOptions = {
@@ -82,7 +89,31 @@ function generatePassword() {
     return randomelement
   }
 
+//grabs items from possiblePassword for the password lenght entered
+for (var i = 0; i < passwordOptions.passwordLength; i++) {
+  var randomPassword = getRandomArray(possiblePassword)
+  password.push(randomPassword)
 }
+
+//if random selection failed to grab all required characters this should force them in.
+if (specialCharacterRequired === true) {
+  password[0] = getRandomArray(specialCharacter)
+}
+
+if (numberRequired === true) {
+  password[1] = getRandomArray(number)
+}
+
+if (lowercaseRequired === true) {
+  password[2] = getRandomArray(lowercase)
+}
+
+if (uppercaseRequired === true) {
+  password[3] = getRandomArray(uppercase)
+}
+
+return password.join("")
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -90,6 +121,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
