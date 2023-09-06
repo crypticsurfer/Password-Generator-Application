@@ -11,5 +11,8 @@ NA
 The end result can be viewed [here.]()
 Screenshot:
 
+## Credits 
+Tim Morgan wrote the Javascript that forces the password to create if random selection failed.
+
 ## Licence
 NA
