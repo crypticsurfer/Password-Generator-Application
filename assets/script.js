@@ -60,7 +60,27 @@ function generatePassword() {
     },
   ]
 
-  //
+  //housing for password and possible password
+  var password = []
+  var passwordCharacters = []
+
+  //load the required characters into possible password
+  chosenOptions.forEach(function (options) {
+    if (options.required) {
+      passwordCharacters.push(options.characters)
+    }
+  }
+  )
+
+  //grabs all characters in the possible password and combines them
+  var possiblePassword = passwordCharacters.flat()
+
+  //makes a function to pull random elements from an array
+  function getRandomArray(array) {
+    var randomindex = Math.floor(Math.random() * array.length)
+    var randomelement = array[randomindex]
+    return randomelement
+  }
 
 }
 function writePassword() {
