@@ -9,7 +9,8 @@ NA
 
 ## Usage
 The end result can be viewed [here.]()
-Screenshot:
+Screenshot: ![Password Generator Application](https://github.com/crypticsurfer/Password-Generator-Application/assets/130003418/6e4dddb2-5fb3-4204-aa82-387561db6ada)
+
 
 ## Credits 
 Tim Morgan wrote the Javascript that forces the password to create if random selection failed.
