@@ -8,9 +8,9 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 
 var generateBtn = document.querySelector("#generate");
 
-  // Write password to the #password input
-  function generatePassword() {
-    
+// Write password to the #password input
+function generatePassword() {
+
   //start by defining password length
   var passwordLength = window.prompt("Enter desired password length, between 8 and 128 characters.")
   if ((passwordLength < 7) || (passwordLength > 129)) {
@@ -89,30 +89,30 @@ var generateBtn = document.querySelector("#generate");
     return randomelement
   }
 
-//grabs items from possiblePassword for the password lenght entered
-for (var i = 0; i < passwordOptions.passwordLength; i++) {
-  var randomPassword = getRandomArray(possiblePassword)
-  password.push(randomPassword)
-}
+  //grabs items from possiblePassword for the password lenght entered
+  for (var i = 0; i < passwordOptions.passwordLength; i++) {
+    var randomPassword = getRandomArray(possiblePassword)
+    password.push(randomPassword)
+  }
 
-//if random selection failed to grab all required characters this should force them in.
-if (specialCharacterRequired === true) {
-  password[0] = getRandomArray(specialCharacter)
-}
+  //if random selection failed to grab all required characters this should force them in.
+  if (specialCharacterRequired === true) {
+    password[0] = getRandomArray(specialCharacter)
+  }
 
-if (numberRequired === true) {
-  password[1] = getRandomArray(number)
-}
+  if (numberRequired === true) {
+    password[1] = getRandomArray(number)
+  }
 
-if (lowercaseRequired === true) {
-  password[2] = getRandomArray(lowercase)
-}
+  if (lowercaseRequired === true) {
+    password[2] = getRandomArray(lowercase)
+  }
 
-if (uppercaseRequired === true) {
-  password[3] = getRandomArray(uppercase)
-}
+  if (uppercaseRequired === true) {
+    password[3] = getRandomArray(uppercase)
+  }
 
-return password.join("")
+  return password.join("")
 }
 
 //actually creating the password
@@ -120,7 +120,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  //making it show the password comes up as an alert but will also generate on the screen after click the alert
+  alert(passwordText.value = password);
+
 }
 
 // Add event listener to generate button
