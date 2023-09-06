@@ -8,7 +8,7 @@ A simple password gernerator created using Javascript. Clicking the Generate Pas
 NA
 
 ## Usage
-The end result can be viewed [here.]()
+The end result can be viewed [here.](https://crypticsurfer.github.io/Password-Generator-Application/)
 Screenshot: ![Password Generator Application](https://github.com/crypticsurfer/Password-Generator-Application/assets/130003418/6e4dddb2-5fb3-4204-aa82-387561db6ada)
 
 
